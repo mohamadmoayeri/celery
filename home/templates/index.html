@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+</head>
+<body>
+
+
+
+    
+
+    <div class="container pt-5 hero">
+      <div class="row align-items-center text-center text-md-left">
+        
+        <div class="col-lg-4">
+          <h1 class="mb-3 display-3">Recursive Functions</h1>
+          
+        </div>
+        <div class="col-lg-8">
+          <div class="">
+          {% block factoriel %}
+          
+              <form  method="post" class="bg-white" action={% url 'factorial' %}>{% csrf_token %}
+                <h2 > Factorial(n)</h2>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    {{form.n.label_tag}}
+                    {{form.n}}<br/>
+                    {{form.n.errors|first|lower}}<br/>
+                  </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-lg" value="calculate">
+                 <h2><a href="{% url 'show' %}"> show hello automatically</a></h2>
+        
+              </form>
+          {% endblock factoriel %}
+                
+                
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+</body>
+</html>
